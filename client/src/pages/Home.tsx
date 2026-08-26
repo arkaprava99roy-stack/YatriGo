@@ -2,7 +2,7 @@ import { ArrowUpRight, ChevronDown, LocateFixed, Pause, Play, Radio, ShieldCheck
 import { useEffect, useRef, useState } from "react";
 
 /** Transit Noir page: asymmetry, sodium-saffron signals, editorial type, and route-trace motion. */
-const APP_URL = import.meta.env.VITE_APP_URL || "/app";
+const APP_URL = import.meta.env.VITE_APP_URL || "https://drive.google.com/drive/folders/1o_C8v3dERBYKLYMYiRcNxbtCPt1T5Vaj?usp=sharing";
 
 const signals = [
   { label: "LIVE BUS", value: "S12", detail: "Newtown → Howrah", tone: "saffron" },
@@ -17,7 +17,7 @@ const features = [
 ];
 
 function goToApp() {
-  window.location.href = APP_URL;
+  window.open(APP_URL, "_blank", "noopener,noreferrer");
 }
 
 export default function Home() {
@@ -69,7 +69,7 @@ export default function Home() {
         <div className="grain" />
         <header className="nav-wrap">
           <a className="brand" href="#top" aria-label="YatriGo home">
-            <span className="brand-mark"><img src="/manus-storage/yatrigo-mark_70dd0f9a.png" alt="" /></span>
+            <span className="brand-mark"><img src="https://d36hbw14aib5lz.cloudfront.net/310519663829663503/GuiLPhYvDs65RZsuFekEsC/yatrigo-mark_70dd0f9a.png?Expires=1787776280&Signature=tiPJi5qYncWRQWtseANDCloMWPtHfiGItQc1hHH2lI2Bl~D83bTERQGdcZA8tOKbJV1aJYYHhCADNJZMudQZrv6od4ddO60YxCMlxghKV6eIEjPphP9cN~skYOeDUAI5T8CYdm09KObgDDB8yt5NlmMxpNx7thcXwqFAUkDzMOPRFcFG6jS0dGjYGd71Aq94hu8JKluaGOl3aUchfbFbvA5y7pHPQkjQl4ii6MG6HMMymQDUocHBxi-5y~ZgBwSHuAKNYgeJzWoT5XwPcfuZnxy7SXGzFXOvSAGSKecHFuGphRPoJcgsNplSml1iOZV8z7t-v8HGBXqXRvLf0zkfug__&Key-Pair-Id=K1MP89RTKNH4J" alt="" /></span>
             <span className="brand-name">Yatri<span>Go</span></span>
           </a>
           <nav className="nav-links" aria-label="Primary navigation">
@@ -137,7 +137,7 @@ export default function Home() {
 
       <section className="closing-section"><div className="closing-orbit orbit-one" /><div className="closing-orbit orbit-two" /><div className="closing-content"><span className="eyebrow"><span className="live-dot" /> Now entering: the next commute</span><h2>Make the city<br /><em>legible.</em></h2><p>YatriGo is starting in Kolkata. The signal is designed to travel.</p><button className="primary-cta" onClick={goToApp}>Go to the app <ArrowUpRight size={18} /></button></div></section>
 
-      <footer className="footer"><a className="brand" href="#top"><span className="brand-mark small"><img src="/manus-storage/yatrigo-mark_70dd0f9a.png" alt="" /></span><span className="brand-name">Yatri<span>Go</span></span></a><span>Team TRINETRA · HyperFusion 2026</span><span>© 2026 YatriGo</span><button className="footer-note" onClick={() => setNoticeOpen(true)}>About the MVP <ArrowUpRight size={14} /></button></footer>
+      <footer className="footer"><a className="brand" href="#top"><span className="brand-mark small"><img src="https://d36hbw14aib5lz.cloudfront.net/310519663829663503/GuiLPhYvDs65RZsuFekEsC/yatrigo-mark_70dd0f9a.png?Expires=1787776280&Signature=tiPJi5qYncWRQWtseANDCloMWPtHfiGItQc1hHH2lI2Bl~D83bTERQGdcZA8tOKbJV1aJYYHhCADNJZMudQZrv6od4ddO60YxCMlxghKV6eIEjPphP9cN~skYOeDUAI5T8CYdm09KObgDDB8yt5NlmMxpNx7thcXwqFAUkDzMOPRFcFG6jS0dGjYGd71Aq94hu8JKluaGOl3aUchfbFbvA5y7pHPQkjQl4ii6MG6HMMymQDUocHBxi-5y~ZgBwSHuAKNYgeJzWoT5XwPcfuZnxy7SXGzFXOvSAGSKecHFuGphRPoJcgsNplSml1iOZV8z7t-v8HGBXqXRvLf0zkfug__&Key-Pair-Id=K1MP89RTKNH4J" alt="" /></span><span className="brand-name">Yatri<span>Go</span></span></a><span>Team TRINETRA · HyperFusion 2026</span><span>© 2026 YatriGo</span><button className="footer-note" onClick={() => setNoticeOpen(true)}>About the MVP <ArrowUpRight size={14} /></button></footer>
       {noticeOpen && <div className="notice-backdrop" role="dialog" aria-modal="true" aria-label="About the MVP"><div className="notice-card"><button className="notice-close" onClick={() => setNoticeOpen(false)} aria-label="Close"><X size={18} /></button><span className="eyebrow">A note on the current build</span><h3>Built to be honest about the road ahead.</h3><p>YatriGo is a functional Kolkata-first MVP. Live reports and estimates work today; predictive AI, verified coordinates, persistent storage, and the Safety Shield are part of the planned platform direction.</p><button className="outline-cta" onClick={() => setNoticeOpen(false)}>Close note</button></div></div>}
     </main>
   );
